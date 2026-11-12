@@ -1,0 +1,58 @@
+{
+  "name": "opencode-design",
+  "version": "0.1.0",
+  "description": "Cursor-like visual design feedback for OpenCode Desktop",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maplepreneur/opencode-design.git"
+  },
+  "homepage": "https://github.com/maplepreneur/opencode-design#readme",
+  "bugs": {
+    "url": "https://github.com/maplepreneur/opencode-design/issues"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./gui-experimental": "./dist/gui-experimental.cjs",
+    "./contract": "./src/gui/contract.ts"
+  },
+  "files": [
+    "src",
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "check": "npm run typecheck && npm run test && npm run test:e2e && npm run build"
+  },
+  "dependencies": {
+    "@opencode/plugin": "2.2.7",
+    "effect": "4.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^26.0.0",
+    "electron": "44.9.1",
+    "solid-js": "^1.9.19",
+    "typescript": "^5.9.3",
+    "vite": "^7.0.0",
+    "vite-plugin-solid": "^2.11.10",
+    "vitest": "^4.1.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "design-mode",
+    "browser",
+    "visual-feedback"
+  ]
+}
